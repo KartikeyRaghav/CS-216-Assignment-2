@@ -1,0 +1,263 @@
+INSTALLING
+
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ bitcoind --version
+Bitcoin Core daemon version v30.2.0 bitcoind
+Copyright (C) 2009-2026 The Bitcoin Core developers
+
+Please contribute if you find Bitcoin Core useful. Visit
+<https://bitcoincore.org/> for further information about the software.
+The source code is available from <https://github.com/bitcoin/bitcoin>.
+
+This is experimental software.
+Distributed under the MIT software license, see the accompanying file COPYING
+or <https://opensource.org/license/MIT>
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ bitcoin-cli --version
+Bitcoin Core RPC client version v30.2.0
+Copyright (C) 2009-2026 The Bitcoin Core developers
+
+Please contribute if you find Bitcoin Core useful. Visit
+<https://bitcoincore.org/> for further information about the software.
+The source code is available from <https://github.com/bitcoin/bitcoin>.
+
+This is experimental software.
+Distributed under the MIT software license, see the accompanying file COPYING
+or <https://opensource.org/license/MIT>
+
+
+
+
+
+
+
+VERIFYING INSTALLATION
+
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ bitcoind -regtest -daemon
+Bitcoin Core starting
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ bitcoin-cli -regtest getblockchaininfo
+{
+  "chain": "regtest",
+  "blocks": 0,
+  "headers": 0,
+  "bestblockhash": "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206",
+  "bits": "207fffff",
+  "target": "7fffff0000000000000000000000000000000000000000000000000000000000",
+  "difficulty": 4.656542373906925e-10,
+  "time": 1296688602,
+  "mediantime": 1296688602,
+  "verificationprogress": 2.099245227294601e-06,
+  "initialblockdownload": true,
+  "chainwork": "0000000000000000000000000000000000000000000000000000000000000002",
+  "size_on_disk": 293,
+  "pruned": false,
+  "warnings": [
+  ]
+}
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ bitcoin-cli -regtest createwallet "testwallet"
+{
+  "name": "testwallet",
+  "warnings": [
+    "-paytxfee is deprecated and will be fully removed in v31.0."
+  ]
+}
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ bitcoin-cli -regtest getnewaddress
+bcrt1qz6mgcvxvpd9dljx3ufpnpmu5m7zdpc42slg55x
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ address=$(bitcoin-cli -regtest getnewaddress)
+kartikey@kartikey-LOQ-15IAX9:~/.bitcoin$ $address
+bcrt1qu37uek6mykkxc49fpg9xapdwhuljf2c7av38y3
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ bitcoin-cli -regtest generatetoaddress 101 "$address"
+[
+  "18f79ce4656e2598dc6fb9abee777299c3dfe92aa10ccd13dd4ee66eb2dacf1c",
+  "2ba9efbde8c9406b72ebae981f99cfe6d5cf879b5a62a2c3720fd63725192220",
+  "18c67a9f0bfa86bf4e1d9e3c25c8e4dab13fb3079a252f613bf95b6df6b5bfd8",
+  "795d564b255f999ca5b65965e61e185330cb8d2dc11ca81f52713e577a96b530",
+  "4bc7ab58c554dc091f65813b816be8aadaf5134fa9352621b0102a20a5941279",
+  "50e5159f2b37b0fcb961d0a90b8f6f7c86e757307143efa43733c155c9f2d00e",
+  "48579a5629ea5add3ae41533fd2f46da8a262a99a6663d45ece400791a3550c4",
+  "6f04ab085c28e59a8dfbc01b7979aeb5463aefe05aea0ac8348282510cf6008b",
+  "5e3386564cc9bc02cdc598bbf1856c230e5840c44c65d08268fb763c67a8db06",
+  "6d022a2c857db89ae59301ad525b08147643c07c2b40d433de166ae82ad3eb9b",
+  "2888bb5863bd4f7ae6726f78ee0bae720354fd5218e646f91e4c9fbb41deb08d",
+  "2b47114361e1fde3f1d65fa339f73f10b4a461c08e1f5d8df97e40fddb1207d4",
+  "3b04b970601145811650da7a529288ae0ad28033a9f62d24c723658cb47512b7",
+  "00df0021e5f96b36de21390970f8ac5e8e492dd36dcea773a4adb047fef03c1c",
+  "4b5faf0df1dcb562b700dbb98c539814992da0c7f10c040e4a2b0b8bf407cf2e",
+  "6110177df21161aca5817b78ba3242eb6a71406ebc14867f681ca5be28a74f33",
+  "07cda948718e6daabe819c24ee864b77a85c4251e6fd8632ec4db36a63053a47",
+  "1d341d41a6c71787cc713a9f39ab36bb46f3b4216afec4d843e1a151312e6c70",
+  "2c0bd486c39d83d8e46ea2aa2006ad9df4560d299289e76c998714a5d3c86b8f",
+  "479a06d6ce903077f91589e81e44b42fa0efef8ab5362b13a077b53feb127473",
+  "7fd28f6e63ecf6b5af474c65fe293d76d7ff3a355db6fef2f21e794198637be8",
+  "270e4c8ca029649cb3b0b1d25a6fd00b03ad97eed662aa7931d5ad29ae7d4d25",
+  "5e13bc0a431765777e193aa4d26dadedaa08a246b0091b678181d953429d5209",
+  "08aef6f9f6c93689badba3f4594e2513bda4b963a9368ac5f4e93a5f76241418",
+  "46e40808cf4647aaa8595d0eb50057793d111f3d1e2e4c8b704d2012a6418084",
+  "189a1b336a6f7bfe98094f3976d78c1c819dde16c8ebeb498522489cee6579c8",
+  "5ead393a3192057c533438a07a6af5704d7626a00eff5ace1466c9c7e87ef3a6",
+  "1b697d2ebfdb76f080204089b53e8901a68c492c1cc8dc1e1ead742d58863f10",
+  "5ee6b33f0fdd101765e3e73dedb6e49315d46c64118e45555a528d3a477c6506",
+  "14f4bcf7ea1634b4e1d04a35465a770bda9f2523b864a6e13892df7db9f54437",
+  "5355c36266dee107d98d6bb0d4017febbfd23ae8a745e1cfa9687bb992cfef18",
+  "18b6575694cef54bc0b36147e7e9c866541d50a9eae8f6911a91c8b792d62771",
+  "7e9b902a93a6d2e15ba314738ce77fd102c99078b00b10ecf7c44d589f2e9c5c",
+  "6402e6200d6899e326c2bdf1ab3e798e6d527c4f22ea813c255a46c5afb245e4",
+  "36f6001f2f30383c6ba3d30a6a48440a648afc232b5f22224ff17bdcd01ad34a",
+  "723667544d440b941f086208a8d219afb9b8e0bb68d4e5c29cf1f6b6a6109262",
+  "6692b16eec3b60fc3aaffcae097e97c40820955f07f9b705583313540b6255f9",
+  "5ef96ab9089a8879796ac66d441800b8be1bec625928d89639b7c8e99c58593b",
+  "75f3117a9de0ec4de0f7e54aad20803d2a862114be9c4be8073df9aa7ed6ec1a",
+  "362f826d93b50f86b70e740ad1f26bd8059fcddc7db6458730e173978ffd4ef4",
+  "68c8f81121df9e4e9e9e46dfa954989b7b4c57722532ca4e43b55a694c9bec06",
+  "5b2b287940b74f395d85185900486975930693c516d13761077024ba0d610160",
+  "55c525151ee546baf0089544e634dd1c20f1223cff7e9ab529a8d51e4753f6e7",
+  "380524ec856c01b69ae2d261e49f0016326ec8a9302e11cd714acfd825fe2c0b",
+  "59f87f8c6398946cdb9ab8a35320e30fc47ca3fd18ec5626dd2cae2fac8e6c8d",
+  "5b73b93697a8d94c43fa2096cc178604430b4d8af03df566961ac5c2ef77991a",
+  "635feda7f18ec74a8c2d3dc2ce05c30340caf453fe2107ddb955d3b5fee9028c",
+  "3f55f99503d9bfd12f100c64a2d3a40f51a7a615e7ad42a1b6d3a68ff3161374",
+  "185b95e5c8eb01733b84d3d44c66cff08e3b37369fa5150dcd8328b120690f8a",
+  "054774ccbab543ed2c26c45009b113db9fc768012d6c035cca665f0ed474f7f6",
+  "2b984bbffb2ce2ee695145342a33594b3f009815fd2d86af9948d03d63210e03",
+  "484aa7ff4dd8f425a2e13401125ab30d235ebadae7c1ef2e087825eceb9da136",
+  "09a29fe3f3617e6902bccd7883374474cc3c8208637541abe633de4b59296ecc",
+  "79d801dec6f0159c86d89a224022b86e8962b568ba38f2b36a57c3a2d8a13a69",
+  "78bdafcbc5a69355ebf8fba2847aedd943aa04b807036a78a521a65c6a4e809a",
+  "5efe5a570120535b126ce06e91c09ba4becfd47e9496aa2907d81164d4f96915",
+  "0620521ab94bbaee5af32924be32c5e2e8b38cd92f6cdad1d32530d02f1ca4e3",
+  "3b074169031cd3cf89f344fdeb280174ef55f45742195e19706d297fd9ab5af6",
+  "549d8bf17a312f4f8133692e961abddd92fe63ecb498cd1ab943fba85fee8049",
+  "13abec626c6a66fecdd959d723003cfd6678e8f549eaafaefc95b5af0beaa817",
+  "659e1746759e0792777dbb013810d23afea7818887c45d44b96636135abc2d46",
+  "437a10b15c390c981ad720bfa4999d18cba631c551af4fa69a0b5a24cdd05d51",
+  "71ceadce2aa0141debb423155e64b1a2712080b238e8b0877285e46de87b0c2c",
+  "6188f867d4f13427c52f33143cdedea569a545379e8f6aeb1a5006f50c7a0844",
+  "7beccd442d1f6a9557df0c06f515f0b816ca54e31a50f1e85a71e8e3e6d1f1d1",
+  "6468b69f89cdfede376aa1c3456b68b499abc54e23f3b9d8fb0c649bb350ae8d",
+  "4026da5eb067285ac4bb1db445c1696566795f8bdbec9cc3c5c898f0ad5b484d",
+  "0f69e5299a5772bb47e0933a490db7bcd4544e5221f9af1f3b1726a06b39289e",
+  "160d319a53bfafb15fd54bfb9c9426b6a0f71594721f3a490092e76a4932c402",
+  "614e11f861a046ea2e52973badcfa9f5468578d9c3b6f5bef2af891f2af28370",
+  "38858f8d2ad117b602ae778c891cfec69b1c783ee5cd1775d5a8fb0a13ae640d",
+  "45057b08883370cbbb3ff725ed6203648b892a84be85827f789200f98af14dd9",
+  "5f87f521e22542723b29c3adc36b84f6087410c14a8ed8f728b5cfc76ee37a8b",
+  "749d44fc1cc9a788ecf93bfbc194714c8b748242b1ce111e62151600b4feeede",
+  "1707d58eb6b7576f761e100f76c244a79b27bf681461d4e83c7367498477d25e",
+  "5330626e19429039c079c7b97abdce56c1c149bb6eedf9156d769218a92f8f87",
+  "1335339e111c8e6bc1cadf00bcc245c2c634ed83c25b58756eb4833481c29c7d",
+  "5163fecacafd5fd95fda5a3b6789db01a178402ef9707fbc673ee39960168304",
+  "1c33658911cb3b281ad6dc6b906a5fb626f53cfbb33ce50e641e0faa1070c9e5",
+  "529fca78f58ea696baa72807945e4989e2f34ba1f12f9e71f3db159bc9873dbf",
+  "4700685f98ef09eedd3318dbd99c75330d170bb3558a84622ec06ee7ab6042e0",
+  "03a894cb5e9e95558a57494f28e142839b7407784122afcb449dedaaaa23607b",
+  "7f570ee3674ce05ff4abe2c2a5d6d6736f902fec23419212d8a23ffce5d77ceb",
+  "09b99a1c048dad7e85c66ecd58f3cd6828b5ef577e2182a81353fd2eb48f212d",
+  "09e1d833be6ec1dd9300257a350cbeed0c0e58cbf6a7bdf15b02baa1e2483be0",
+  "5f8e4f5471a7307598982a4d3ab74b55add7b7f9972a37e68caf04af481ebb6f",
+  "585fa4d3df17ab42996de8982497186a9c48a6e46616e2207c437f6b64ff5a1f",
+  "5f6bc19e197acb904ac5d5df1f5b72a1b4270723961469cb69cc6e2db47a47f9",
+  "12eaf2d0274078e1e4c249936e7f4a9e70c14d801f25ba2afbcdcf97e343d3dd",
+  "7aa3a89280cf284218eb07dc720b5f893d884e74ed50e24ebdfc088a275159c7",
+  "7e1f2f59e531842652f0fa97c7a225fb9faeb0b73274d08ac43ff1d1643f3dac",
+  "29aba017090484ea3bc2e97673bcd9311b738f0598a78f44cbe14a43a7e7e55b",
+  "558ea611ef336d7b83e87843bfff9ab02e2d7719ccb8729533d01e32f3d7ae6d",
+  "47711b910f68f31ab2927160a9a56e7e3fe2eebe91d1ac86d38078a199891edb",
+  "52243a55c86a5af1ecb25cf65b7d3d196b66f0c736f4f61beac93314ed696e64",
+  "415bdaf5946834868de14f32326471a948769d76318f6a8ae1ec0c27b284206f",
+  "7806c18a8ea7ffd90f6d9f393dd27d3aee806373dbf87bc39cb440632b39323b",
+  "31c492127a43a783675faf40d69b46d395914b5ee597e929eea1c71c3e36d291",
+  "75aabe2d0312e97db15182feb881954c4290b84f44a702753d72c799b5698f3c",
+  "0f656c229b8acae43b1c6fc0043904945f9688e2508bf863eebdaa895f4e7cd1",
+  "74361ed9ba90bdc3c8449f732f4fe266aeabe062e66ba7e8bbac84f8c571343e"
+]
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ bitcoin-cli -regtest getbalance
+50.00000000
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ bitcoin-cli -regtest stop
+Bitcoin Core stopping
+kartikey@kartikey-LOQ-15IAX9:~/Downloads/bitcoin-30.2/bin$ sudo mkdir ~/.bitcoin
+mkdir: cannot create directory ‘/home/kartikey/.bitcoin’: File exists
+kartikey@kartikey-LOQ-15IAX9:~$ sudo nano ~/.bitcoin/bitcoin.conf
+
+
+
+
+
+
+
+
+COMPLETE OUTPUT
+
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoind -daemon
+Bitcoin Core starting
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli getblockchaininfo
+{
+  "chain": "regtest",
+  "blocks": 101,
+  "headers": 101,
+  "bestblockhash": "74361ed9ba90bdc3c8449f732f4fe266aeabe062e66ba7e8bbac84f8c571343e",
+  "bits": "207fffff",
+  "target": "7fffff0000000000000000000000000000000000000000000000000000000000",
+  "difficulty": 4.656542373906925e-10,
+  "time": 1773051866,
+  "mediantime": 1773051865,
+  "verificationprogress": 1,
+  "initialblockdownload": false,
+  "chainwork": "00000000000000000000000000000000000000000000000000000000000000cc",
+  "size_on_disk": 30375,
+  "pruned": false,
+  "warnings": [
+  ]
+}
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli getbalance
+error code: -18
+error message:
+No wallet is loaded. Load a wallet using loadwallet or create a new one with createwallet. (Note: A default wallet is no longer automatically created)
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli listunspent
+error code: -18
+error message:
+No wallet is loaded. Load a wallet using loadwallet or create a new one with createwallet. (Note: A default wallet is no longer automatically created)
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli listwalletdir
+{
+  "wallets": [
+    {
+      "name": "testwallet",
+      "warnings": [
+      ]
+    }
+  ]
+}
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli listwallets
+[
+]
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli loadwallet "testwallet"
+{
+  "name": "testwallet",
+  "warnings": [
+    "-paytxfee is deprecated and will be fully removed in v31.0."
+  ]
+}
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli listwallets
+[
+  "testwallet"
+]
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli getbalance
+50.00000000
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli listunspent
+[
+  {
+    "txid": "ba214ba40880b1c33d40ccc01af43276f411868c523aa18d12f4c49c95e2debc",
+    "vout": 0,
+    "address": "bcrt1qu37uek6mykkxc49fpg9xapdwhuljf2c7av38y3",
+    "label": "",
+    "scriptPubKey": "0014e47dccdb5b25ac6c54a90a0a6e85aebf3f24ab1e",
+    "amount": 50.00000000,
+    "confirmations": 101,
+    "spendable": true,
+    "solvable": true,
+    "desc": "wpkh([49f98124/84h/1h/0h/0/1]03a821443883dac7342d29c01f322e357a2d0f9d7982187d120c0d51ce19ae4795)#xfnp3eeg",
+    "parent_descs": [
+      "wpkh([49f98124/84h/1h/0h]tpubDCLMT67Sj9yBfaoksmDcBtG47a2F1hYnf1BbzupjdNNTjCRHNGuEWiNnoBx1kYqc99bSdc469sqUTvkMW2NavzRWrA1UjzeTpTyDAzfHxkH/0/*)#g8f9lja8"
+    ],
+    "safe": true
+  }
+]
+kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli stop
+Bitcoin Core stopping
