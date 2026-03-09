@@ -261,3 +261,124 @@ kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli listunspent
 ]
 kartikey@kartikey-LOQ-15IAX9:~$ bitcoin-cli stop
 Bitcoin Core stopping
+
+
+
+
+
+UTXO set after both scripts are run
+kartikey@kartikey-LOQ-15IAX9:~/.bitcoin$ bitcoin-cli listunspent
+[
+  {
+    "txid": "b088e29fcc359f92ad0b2b4fa6b77a325d8718ad768cb59ffbb16cc8843d1221",
+    "vout": 0,
+    "address": "mhZy6B9AT5tjUixshCetfD2kScurQWFm7P",
+    "label": "",
+    "scriptPubKey": "76a914168229caf26057d17f8f03545a9280a2432ca54088ac",
+    "amount": 9.99800000,
+    "confirmations": 3,
+    "spendable": true,
+    "solvable": true,
+    "desc": "pkh([90009168/44h/1h/0h/0/2]021fd4b7ab9020da14d295d6bc88959ecf4796eeacc02503a308ab4d19e3bb91ae)#4xye27w3",
+    "parent_descs": [
+      "pkh([90009168/44h/1h/0h]tpubDDF5uAwxPpvNLGDt1popaJMWoWbB87yQ5ckmNCEkrcyVMdQbm4fHTVg2LTQqs7dJYAnF3SdrhpEa4uvBRyYcQ2EWDKeMkJempDAVFrUQCS9/0/*)#nd9vj3zq"
+    ],
+    "safe": true
+  },
+  {
+    "txid": "9ba4726b20d62e11928736420dbbabdf1ae0e9d9aa55990e6b6468a39e390169",
+    "vout": 0,
+    "address": "mjJo4e63EDb3uYL5T8AyS7NjVz2TmRoaPs",
+    "scriptPubKey": "76a9142993ce4364c36a7ff69e4859d62833abd3376b4388ac",
+    "amount": 39.99998530,
+    "confirmations": 5,
+    "spendable": true,
+    "solvable": true,
+    "desc": "pkh([90009168/44h/1h/0h/1/0]034bfa523969e86acfd7c5633d3a555025d1ebd3c44f1114fcf6d877c88fd26c0d)#mcevnp3n",
+    "parent_descs": [
+      "pkh([90009168/44h/1h/0h]tpubDDF5uAwxPpvNLGDt1popaJMWoWbB87yQ5ckmNCEkrcyVMdQbm4fHTVg2LTQqs7dJYAnF3SdrhpEa4uvBRyYcQ2EWDKeMkJempDAVFrUQCS9/1/*)#zeqd0yjc"
+    ],
+    "safe": true
+  },
+  {
+    "txid": "d135761de373fe27b41d9a7f3f83c7714180106e02454403cdd41155573ee49f",
+    "vout": 0,
+    "address": "2NFbMYv5xSZLyqJb9Yvat1paLup16pqBAyU",
+    "label": "",
+    "redeemScript": "0014af705bebcd7eb9adbd91dd472b0cbb4b5cef8233",
+    "scriptPubKey": "a914f52166419bca0d1be51e6564f9c71dd0f239f27687",
+    "amount": 9.99800000,
+    "confirmations": 1,
+    "spendable": true,
+    "solvable": true,
+    "desc": "sh(wpkh([90009168/49h/1h/0h/0/2]0267b42f5bd85271082987aacef8573f62230590e9466fc2caad8327ec8a15b679))#2jknwn4z",
+    "parent_descs": [
+      "sh(wpkh([90009168/49h/1h/0h]tpubDDrn3QLydjVSMrMd9p43VDj8QeAAL54B9GNY52YddQg5YFD7yX1Q7C3KrfPAzThj6yPWcFGgFpYvEMnFHXdxi3NyvfsAPebYKDgCE9rYoGs/0/*))#hpke0r8h"
+    ],
+    "safe": true
+  },
+  {
+    "txid": "8d82c0042ed89877c7cf12730d9f889e7a821bf5dcfb65b179a2e1c1d1f5bb30",
+    "vout": 1,
+    "address": "2N2dsZsFZtMRMwu3gndyHHyZxWpYeg45Di2",
+    "redeemScript": "00142ab0b00399c0cc9efa6a78ce356db6f79dda1879",
+    "scriptPubKey": "a9146701a710dbe81a8e78ef6a930e3078087cc2414387",
+    "amount": 89.99997900,
+    "confirmations": 3,
+    "spendable": true,
+    "solvable": true,
+    "desc": "sh(wpkh([90009168/49h/1h/0h/1/0]0302a2aa96d5ac5c00946aaaf098a47145e22b0c92855524c3b169432902cbc796))#f5w4xqcj",
+    "parent_descs": [
+      "sh(wpkh([90009168/49h/1h/0h]tpubDDrn3QLydjVSMrMd9p43VDj8QeAAL54B9GNY52YddQg5YFD7yX1Q7C3KrfPAzThj6yPWcFGgFpYvEMnFHXdxi3NyvfsAPebYKDgCE9rYoGs/1/*))#zqc0hujg"
+    ],
+    "safe": true
+  },
+  {
+    "txid": "716fe3b9696dfc768169b5d8f8a10c9435f2c4d6e86ff3274afd8604727a7127",
+    "vout": 0,
+    "address": "bcrt1q6vwzukh05fky5pjwtj3vq4t2lfxjmzht59fw3n",
+    "label": "",
+    "scriptPubKey": "0014d31c2e5aefa26c4a064e5ca2c0556afa4d2d8aeb",
+    "amount": 50.00000000,
+    "confirmations": 103,
+    "spendable": true,
+    "solvable": true,
+    "desc": "wpkh([90009168/84h/1h/0h/0/0]03709a8d9d702c55246e808863c8e9966eb69c5efae71ae159f9cbf21c81a5f20a)#sday7neu",
+    "parent_descs": [
+      "wpkh([90009168/84h/1h/0h]tpubDDqyZbUDuWuhvkfESXRCuZBGskwSCyuBBN2WztGQTdP9hJbbVd1vVawfWiDEDZhSpHrtwFAXTpfwaLXTetp4wLGrBmctCnCEDAecAyjfUEm/0/*)#x07shs4d"
+    ],
+    "safe": true
+  },
+  {
+    "txid": "7a1b051124ec6f571f030a03c15e7bcadc5dc24a9820f4695a78ae73af86164a",
+    "vout": 0,
+    "address": "bcrt1q6vwzukh05fky5pjwtj3vq4t2lfxjmzht59fw3n",
+    "label": "",
+    "scriptPubKey": "0014d31c2e5aefa26c4a064e5ca2c0556afa4d2d8aeb",
+    "amount": 50.00000000,
+    "confirmations": 101,
+    "spendable": true,
+    "solvable": true,
+    "desc": "wpkh([90009168/84h/1h/0h/0/0]03709a8d9d702c55246e808863c8e9966eb69c5efae71ae159f9cbf21c81a5f20a)#sday7neu",
+    "parent_descs": [
+      "wpkh([90009168/84h/1h/0h]tpubDDqyZbUDuWuhvkfESXRCuZBGskwSCyuBBN2WztGQTdP9hJbbVd1vVawfWiDEDZhSpHrtwFAXTpfwaLXTetp4wLGrBmctCnCEDAecAyjfUEm/0/*)#x07shs4d"
+    ],
+    "safe": true
+  },
+  {
+    "txid": "0c1506dad085a80336b5d79072d22c5507e3e39d8b24cd61ac1cdd26c59b92cb",
+    "vout": 0,
+    "address": "bcrt1q6vwzukh05fky5pjwtj3vq4t2lfxjmzht59fw3n",
+    "label": "",
+    "scriptPubKey": "0014d31c2e5aefa26c4a064e5ca2c0556afa4d2d8aeb",
+    "amount": 50.00000000,
+    "confirmations": 102,
+    "spendable": true,
+    "solvable": true,
+    "desc": "wpkh([90009168/84h/1h/0h/0/0]03709a8d9d702c55246e808863c8e9966eb69c5efae71ae159f9cbf21c81a5f20a)#sday7neu",
+    "parent_descs": [
+      "wpkh([90009168/84h/1h/0h]tpubDDqyZbUDuWuhvkfESXRCuZBGskwSCyuBBN2WztGQTdP9hJbbVd1vVawfWiDEDZhSpHrtwFAXTpfwaLXTetp4wLGrBmctCnCEDAecAyjfUEm/0/*)#x07shs4d"
+    ],
+    "safe": true
+  }
+]

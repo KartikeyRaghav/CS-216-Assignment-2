@@ -135,7 +135,7 @@ Input Counter: 01
 The next 32 bytes are the hash of tx_id of the previous transaction or the input transaction being used
 Hash of the spent transaction: 46eef8415ba35677c8725282c568d51e7ed075320d9e769d740d83296f9452ae
 
-The next 8 bytes represent the index of the output in the output of previous transaction
+The next 4 bytes represent the index of the output in the output of previous transaction
 TxOut index: 00000000 --> Means the first output of the previous transaction
 
 The next byte represents the length of script
@@ -180,7 +180,7 @@ Pub key hash: 168229caf26057d17f8f03545a9280a2432ca540
 88 --> OP_EQUALVERIFY
 ac --> OP_CHECKSIG
 
-
+00000000: Transaction locktime
 
 
 We understand from this one complete hash of transaction B->C that it contains all the required information for the given transaction. 
@@ -195,3 +195,9 @@ The script duplicates the <pubkey> present at the top of the hash and pushes it 
 The already present <pubkey_hash> in the script is then pushed into the stack.
 The OP_EQUALVERIFY function then pops out the top two elements and compares them. If they are equal then the script proceeds further otherwise stops.
 The OP_CHECKSIG then pops out the <pubkey> and <signature> present in the stack and verifies that the signature belongs to the provided pubkey only. If true a 1 is pushes into the stack. This marks the end of the algoritm.  
+
+The full process is that we created a wallet named testwallet under which we created 3 legacy addresses (A, B and C). We first send 10 bitcoins to A(since we are in regtest we can directly send bitcoins using the function sendtoaddress(<address>, <number_of_bitcoins>)).
+We then get the utxo set and find the utxo that is owned by A. This utxo has information of owner address, amount and the locking script which must be unlocked using the signature and the pubkey of the owner.
+This utxo is then used as an input to send the bitcoins to B. A fee of 0.001 BTC is charged and a new locking script is created with the pubkey_hash of B. The previous UTXO is then destroyed and a new UTXO is created that has the address of B.
+This new UTXO is then used in a new transaction of sending the bitcoins (now 9.999 BTC) to C with a fee charge of 0.001 BTC. The locking and unlocking are done again using the signature and pubkey of B and pubkey_hash of C respectively.
+The new UTXO generated is now addressed to C and can be used for a new transaction when the signature and pubkey are provided.
