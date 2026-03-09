@@ -59,7 +59,11 @@ raw_tx = rpc.createrawtransaction(inputs, outputs)
 
 print("Raw TX A->B:", raw_tx)
 
-decoded = rpc.decoderawtransaction(raw_tx)
+signed_tx1 = rpc.signrawtransactionwithwallet(raw_tx)
+
+print("Signed TX 1:", signed_tx1)
+
+decoded = rpc.decoderawtransaction(signed_tx1['hex'])
 
 print("Decoded Transaction:")
 print(decoded)
@@ -69,11 +73,7 @@ script_pubkey = decoded["vout"][0]["scriptPubKey"]
 print("Locking Script (ScriptPubKey):")
 print(script_pubkey)
 
-signed_tx = rpc.signrawtransactionwithwallet(raw_tx)
-
-print("Signed TX:", signed_tx)
-
-txid_AB = rpc.sendrawtransaction(signed_tx["hex"])
+txid_AB = rpc.sendrawtransaction(signed_tx1["hex"])
 
 print("TXID A->B:", txid_AB)
 

@@ -1,21 +1,197 @@
-kartikey@kartikey-LOQ-15IAX9:~/Kartikey/CS-216-Assignment-2$ python3 p2pkh_transactions.py 
+(.venv) kartikey@kartikey-LOQ-15IAX9:~/Kartikey/CS-216-Assignment-2$ python3 p2pkh_transactions.py
 Wallet loaded
-Address A: mhQVnXPXqCq62gFn4HK9jAXVkjuef8s6qN
-Address B: mg2c4zUTZcXggWufbnD2FN5fqauVYhpbZg
-Address C: msfuEVhExQTmwYLahooen1xcWuLikoAX9X
-Funding TX: 9054b32a929c8ea8d95ee1214cd6cc4737d11c584130c95e547a7d47154c6083
-UTXO A: 9054b32a929c8ea8d95ee1214cd6cc4737d11c584130c95e547a7d47154c6083
-Raw TX A->B: 020000000183604c15477d7a545ec93041581cd13747ccd64c21e15ed9a88e9c922ab354900000000000fdffffff016043993b000000001976a914059b987f9b19b16e64b27599cf2f2eca4b3c627b88ac00000000
+Address A: n1Kd21fkTz6osyLFghaEMsJAQHpH7DaTUn
+Address B: mmA4nz3qKS3vczYbH8p3voQYLwcfDVHpJt
+Address C: mhZy6B9AT5tjUixshCetfD2kScurQWFm7P
+Funding TX: 9ba4726b20d62e11928736420dbbabdf1ae0e9d9aa55990e6b6468a39e390169
+UTXO A: 9ba4726b20d62e11928736420dbbabdf1ae0e9d9aa55990e6b6468a39e390169
+Raw TX A->B: 02000000016901399ea368646b0e9955aad9e9e01adfabbb0d42368792112ed6206b72a49b0100000000fdffffff016043993b000000001976a9143ddd71c62b7cbe8939888deb1624ec9e551a1cd588ac00000000
+Signed TX 1: 
+{
+    'hex': '02000000016901399ea368646b0e9955aad9e9e01adfabbb0d42368792112ed6206b72a49b010000006a47304402205a19228c7d2b9401712861ac95133b6fff817660276e6b00fb409c191919749e02204c132a169827c48a28dc35ddd8a746a60061a638ba854c5e441ac093b956dd1c01210224c2280d52f7deaac1162967a10b2aa077b5b859145fea00c398f16d21bbdd11fdffffff016043993b000000001976a9143ddd71c62b7cbe8939888deb1624ec9e551a1cd588ac00000000', 
+    'complete': True
+}
 Decoded Transaction:
-{'txid': '7d3c71e22ad21372824e3f4554320fdf644b77f75e7f053609dc607e2cd03f1b', 'hash': '7d3c71e22ad21372824e3f4554320fdf644b77f75e7f053609dc607e2cd03f1b', 'version': 2, 'size': 85, 'vsize': 85, 'weight': 340, 'locktime': 0, 'vin': [{'txid': '9054b32a929c8ea8d95ee1214cd6cc4737d11c584130c95e547a7d47154c6083', 'vout': 0, 'scriptSig': {'asm': '', 'hex': ''}, 'sequence': 4294967293}], 'vout': [{'value': Decimal('9.99900000'), 'n': 0, 'scriptPubKey': {'asm': 'OP_DUP OP_HASH160 059b987f9b19b16e64b27599cf2f2eca4b3c627b OP_EQUALVERIFY OP_CHECKSIG', 'desc': 'addr(mg2c4zUTZcXggWufbnD2FN5fqauVYhpbZg)#39pjcf4t', 'hex': '76a914059b987f9b19b16e64b27599cf2f2eca4b3c627b88ac', 'address': 'mg2c4zUTZcXggWufbnD2FN5fqauVYhpbZg', 'type': 'pubkeyhash'}}]}
+{
+    'txid': 'ae52946f29830d749d769e0d3275d07e1ed568c5825272c87756a35b41f8ee46', 
+    'hash': 'ae52946f29830d749d769e0d3275d07e1ed568c5825272c87756a35b41f8ee46', 
+    'version': 2, 
+    'size': 191, 
+    'vsize': 191, 
+    'weight': 764, 
+    'locktime': 0, 
+    'vin': 
+    [
+        {
+            'txid': '9ba4726b20d62e11928736420dbbabdf1ae0e9d9aa55990e6b6468a39e390169', 
+            'vout': 1, 
+            'scriptSig': 
+            {
+                'asm': '304402205a19228c7d2b9401712861ac95133b6fff817660276e6b00fb409c191919749e02204c132a169827c48a28dc35ddd8a746a60061a638ba854c5e441ac093b956dd1c[ALL] 0224c2280d52f7deaac1162967a10b2aa077b5b859145fea00c398f16d21bbdd11', 
+                'hex': '47304402205a19228c7d2b9401712861ac95133b6fff817660276e6b00fb409c191919749e02204c132a169827c48a28dc35ddd8a746a60061a638ba854c5e441ac093b956dd1c01210224c2280d52f7deaac1162967a10b2aa077b5b859145fea00c398f16d21bbdd11'
+            }, 
+            'sequence': 4294967293
+        }
+    ], 
+    'vout': 
+    [
+        {
+            'value': Decimal('9.99900000'), 
+            'n': 0, 
+            'scriptPubKey': 
+            {
+                'asm': 'OP_DUP OP_HASH160 3ddd71c62b7cbe8939888deb1624ec9e551a1cd5 OP_EQUALVERIFY OP_CHECKSIG', 
+                'desc': 'addr(mmA4nz3qKS3vczYbH8p3voQYLwcfDVHpJt)#7fttka78', 
+                'hex': '76a9143ddd71c62b7cbe8939888deb1624ec9e551a1cd588ac', 
+                'address': 'mmA4nz3qKS3vczYbH8p3voQYLwcfDVHpJt', 
+                'type': 'pubkeyhash'
+            }
+        }
+    ]
+}
 Locking Script (ScriptPubKey):
-{'asm': 'OP_DUP OP_HASH160 059b987f9b19b16e64b27599cf2f2eca4b3c627b OP_EQUALVERIFY OP_CHECKSIG', 'desc': 'addr(mg2c4zUTZcXggWufbnD2FN5fqauVYhpbZg)#39pjcf4t', 'hex': '76a914059b987f9b19b16e64b27599cf2f2eca4b3c627b88ac', 'address': 'mg2c4zUTZcXggWufbnD2FN5fqauVYhpbZg', 'type': 'pubkeyhash'}
-Signed TX: {'hex': '020000000183604c15477d7a545ec93041581cd13747ccd64c21e15ed9a88e9c922ab35490000000006a47304402201129bde865aa7a05918bf70fae111328d9004529a6511659b6a865300f955ce302205b2b733a43ed4b66691f414ac7ab9bdd3a72f703f67bb9e464fe74ecad1ca58d012103e11caf6cd5a8780555bef5ace8778992002f8c603585204ddba841c0cf778207fdffffff016043993b000000001976a914059b987f9b19b16e64b27599cf2f2eca4b3c627b88ac00000000', 'complete': True}
-TXID A->B: 53a0ef4bac203ce36839d421a506ea29cda4df615212f230b16f26e82bbb659d
-Raw TX B->C: 02000000019d65bb2be8266fb130f2125261dfa4cd29ea06a521d43968e33c20ac4befa0530000000000fdffffff01c0bc973b000000001976a9148552b2941c99ebfa6894ffec57c0dce76d7e501988ac00000000
-Signed TX 2: {'hex': '02000000019d65bb2be8266fb130f2125261dfa4cd29ea06a521d43968e33c20ac4befa053000000006a473044022079d20a31f7534910d55576cbe4864404f696df68f60391ee65300bbc4c66882802206279663c666d0af3e3dcc0057b1d58ef0b975a0480f8eed5d428e2385080381a01210347a50f5f0aba77e9e5175e86a2755293aaf5b0299cc17ee693e3b512982fc11efdffffff01c0bc973b000000001976a9148552b2941c99ebfa6894ffec57c0dce76d7e501988ac00000000', 'complete': True}
+{
+    'asm': 'OP_DUP OP_HASH160 3ddd71c62b7cbe8939888deb1624ec9e551a1cd5 OP_EQUALVERIFY OP_CHECKSIG', 
+    'desc': 'addr(mmA4nz3qKS3vczYbH8p3voQYLwcfDVHpJt)#7fttka78', 
+    'hex': '76a9143ddd71c62b7cbe8939888deb1624ec9e551a1cd588ac', 
+    'address': 'mmA4nz3qKS3vczYbH8p3voQYLwcfDVHpJt', 
+    'type': 'pubkeyhash'
+}
+TXID A->B: ae52946f29830d749d769e0d3275d07e1ed568c5825272c87756a35b41f8ee46
+Raw TX B->C: 020000000146eef8415ba35677c8725282c568d51e7ed075320d9e769d740d83296f9452ae0000000000fdffffff01c0bc973b000000001976a914168229caf26057d17f8f03545a9280a2432ca54088ac00000000
+Signed TX 2: 
+{
+    'hex': '020000000146eef8415ba35677c8725282c568d51e7ed075320d9e769d740d83296f9452ae000000006a47304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b012102e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0fdffffff01c0bc973b000000001976a914168229caf26057d17f8f03545a9280a2432ca54088ac00000000', 
+    'complete': True
+}
 Decoded B->C:
-{'txid': '7ab25de7b6a8281e621d065a112202d40fcb24b2d722bff344cfa8fb210e4ffb', 'hash': '7ab25de7b6a8281e621d065a112202d40fcb24b2d722bff344cfa8fb210e4ffb', 'version': 2, 'size': 191, 'vsize': 191, 'weight': 764, 'locktime': 0, 'vin': [{'txid': '53a0ef4bac203ce36839d421a506ea29cda4df615212f230b16f26e82bbb659d', 'vout': 0, 'scriptSig': {'asm': '3044022079d20a31f7534910d55576cbe4864404f696df68f60391ee65300bbc4c66882802206279663c666d0af3e3dcc0057b1d58ef0b975a0480f8eed5d428e2385080381a[ALL] 0347a50f5f0aba77e9e5175e86a2755293aaf5b0299cc17ee693e3b512982fc11e', 'hex': '473044022079d20a31f7534910d55576cbe4864404f696df68f60391ee65300bbc4c66882802206279663c666d0af3e3dcc0057b1d58ef0b975a0480f8eed5d428e2385080381a01210347a50f5f0aba77e9e5175e86a2755293aaf5b0299cc17ee693e3b512982fc11e'}, 'sequence': 4294967293}], 'vout': [{'value': Decimal('9.99800000'), 'n': 0, 'scriptPubKey': {'asm': 'OP_DUP OP_HASH160 8552b2941c99ebfa6894ffec57c0dce76d7e5019 OP_EQUALVERIFY OP_CHECKSIG', 'desc': 'addr(msfuEVhExQTmwYLahooen1xcWuLikoAX9X)#fe6q8fnw', 'hex': '76a9148552b2941c99ebfa6894ffec57c0dce76d7e501988ac', 'address': 'msfuEVhExQTmwYLahooen1xcWuLikoAX9X', 'type': 'pubkeyhash'}}]}
+{
+    'txid': 'b088e29fcc359f92ad0b2b4fa6b77a325d8718ad768cb59ffbb16cc8843d1221', 
+    'hash': 'b088e29fcc359f92ad0b2b4fa6b77a325d8718ad768cb59ffbb16cc8843d1221', 
+    'version': 2, 
+    'size': 191, 
+    'vsize': 191, 
+    'weight': 764, 
+    'locktime': 0, 
+    'vin': 
+    [
+        {
+            'txid': 'ae52946f29830d749d769e0d3275d07e1ed568c5825272c87756a35b41f8ee46', 
+            'vout': 0, 
+            'scriptSig': 
+            {
+                'asm': '304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b[ALL] 02e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0', 
+                'hex': '47304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b012102e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0'
+            }, 
+            'sequence': 4294967293
+        }
+    ], 
+    'vout': 
+    [
+        {
+            'value': Decimal('9.99800000'), 
+            'n': 0, 
+            'scriptPubKey': 
+            {
+                'asm': 'OP_DUP OP_HASH160 168229caf26057d17f8f03545a9280a2432ca540 OP_EQUALVERIFY OP_CHECKSIG', 
+                'desc': 'addr(mhZy6B9AT5tjUixshCetfD2kScurQWFm7P)#2zuxmgay', 
+                'hex': '76a914168229caf26057d17f8f03545a9280a2432ca54088ac', 
+                'address': 'mhZy6B9AT5tjUixshCetfD2kScurQWFm7P', 
+                'type': 'pubkeyhash'
+            }
+        }
+    ]
+}
 ScriptSig (Unlocking Script):
-{'asm': '3044022079d20a31f7534910d55576cbe4864404f696df68f60391ee65300bbc4c66882802206279663c666d0af3e3dcc0057b1d58ef0b975a0480f8eed5d428e2385080381a[ALL] 0347a50f5f0aba77e9e5175e86a2755293aaf5b0299cc17ee693e3b512982fc11e', 'hex': '473044022079d20a31f7534910d55576cbe4864404f696df68f60391ee65300bbc4c66882802206279663c666d0af3e3dcc0057b1d58ef0b975a0480f8eed5d428e2385080381a01210347a50f5f0aba77e9e5175e86a2755293aaf5b0299cc17ee693e3b512982fc11e'}
-TXID B->C: 7ab25de7b6a8281e621d065a112202d40fcb24b2d722bff344cfa8fb210e4ffb
+{
+    'asm': '304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b[ALL] 02e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0', 
+    'hex': '47304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b012102e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0'
+}
+TXID B->C: b088e29fcc359f92ad0b2b4fa6b77a325d8718ad768cb59ffbb16cc8843d1221
+
+
+
+
+I tried using btcdeb (bitcoin debugger) to test the script is correct or not but could not find the correct syntax for it. I was running the below command.
+./btcdeb 304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b01 02e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0 OP_DUP OP_HASH160 3ddd71c62b7cbe8939888deb1624ec9e551a1cd5 OP_EQUALVERIFY OP_CHECKSIG
+but it kept giving the output as invalid script.
+When I ran the same script on an online checker, it gave ouptut as correct. A video of the online checker has been attached to refer.
+
+
+
+
+
+UNDERSTANDING IT IN DETAIL
+We take the example of the signed transaction 2. Below is the hex code of the transaction 2.
+020000000146eef8415ba35677c8725282c568d51e7ed075320d9e769d740d83296f9452ae000000006a47304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b012102e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0fdffffff01c0bc973b000000001976a914168229caf26057d17f8f03545a9280a2432ca54088ac00000000
+02000000 01 46eef8415ba35677c8725282c568d51e7ed075320d9e769d740d83296f9452ae 00000000 6a 47304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b012102e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0 fdffffff 01c0bc973b000000001976a914168229caf26057d17f8f03545a9280a2432ca54088ac00000000
+
+The first 4 bytes are the version number
+Version: 02000000
+
+The next byte is the input counter
+Input Counter: 01
+
+The next 32 bytes are the hash of tx_id of the previous transaction or the input transaction being used
+Hash of the spent transaction: 46eef8415ba35677c8725282c568d51e7ed075320d9e769d740d83296f9452ae
+
+The next 8 bytes represent the index of the output in the output of previous transaction
+TxOut index: 00000000 --> Means the first output of the previous transaction
+
+The next byte represents the length of script
+Script length: 6a --> 6*16 + 10 = 106 Bytes
+
+The next 106 bytes represent the input script
+Input Script: 47304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b012102e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0
+
+Disection of the input
+47 304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b01 21 02e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0
+
+Length of signature Data: 47 --> hex2dec --> 71 Bytes --> 142 Chars
+<signature>: 304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b01
+
+Length of pubkey data: 21 --> hex2dec --> 33 Bytes --> 66 Chars
+<pubkey>: 02e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0
+
+We use this signature and public key against the locking script of the transaction 1
+
+The next 4 bytes represent the sequence
+Sequence: fdffffff
+
+The final bytes are the output
+Output: 01c0bc973b000000001976a914168229caf26057d17f8f03545a9280a2432ca54088ac00000000
+01 c0bc973b00000000 19 76a914168229caf26057d17f8f03545a9280a2432ca54088ac 00000000
+
+The first byte is the number of outputs:
+Number of outputs: 01
+
+The next 8 bytes are the amount being sent
+Amount: c0bc973b00000000 --> 3b97bcc0 --> hex2dec: 999800000 Satoshis
+
+The next byte is the length of the output script:
+Length: 19 --> hex2dec --> 25 Bytes --> 50 characters
+
+The next 25 bytes are the output script:
+Output script: 76 a9 14 168229caf26057d17f8f03545a9280a2432ca540 88 ac
+76 --> OP_DUP
+a9 --> OP_HASH160
+Length: 14 --> hex2dec --> 20 Bytes --> 40 Digits
+Pub key hash: 168229caf26057d17f8f03545a9280a2432ca540
+88 --> OP_EQUALVERIFY
+ac --> OP_CHECKSIG
+
+
+
+
+We understand from this one complete hash of transaction B->C that it contains all the required information for the given transaction. 
+It starts with the version number followed by the hash of the input being used. This hash is used to refer to the input transaction and hence the locking script that was associated with it. 
+The next bytes represent the input script or the unlocking script that contain the signature and the pubkey that are used against the locking script to prove that this transaction can use the previous UTXO. 
+Once the signature and pubkey are verified the transaction can take place. The previous UTXO is destroyed and new UTXO is created. Since there is no change left (i.e. all the amount of the previous UTXO is being sent) only one output exists.
+A new locking script is created with this transaction that contains the hash of the public key of user C. When C wants to spend this UTXO, this locking script will be checked against the signature and the public key provided by the user C.
+To check that the UTXO being spent belongs to the spender, the locking script follows the below procedure.
+<signature> <pubkey> OP_DUP OP_HASH160 <pubkey_hash> OP_EQUALVERIFY OP_CHECKSIG
+This is a stack based algorithm. The user provides their signature and public key which are pushed into the stack.
+The script duplicates the <pubkey> present at the top of the hash and pushes it into the hash.
+The already present <pubkey_hash> in the script is then pushed into the stack.
+The OP_EQUALVERIFY function then pops out the top two elements and compares them. If they are equal then the script proceeds further otherwise stops.
+The OP_CHECKSIG then pops out the <pubkey> and <signature> present in the stack and verifies that the signature belongs to the provided pubkey only. If true a 1 is pushes into the stack. This marks the end of the algoritm.  
