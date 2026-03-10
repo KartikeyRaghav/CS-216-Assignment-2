@@ -5,6 +5,17 @@ The assignment focuses on understanding Bitcoin transactions, specifically **P2P
 
 ---
 
+## Team Kryptonite
+
+| Name | Roll Number |
+|:--- |:--- |
+| **Aarush Bindod** | 240051001 |
+| **Abhiroop Gohar** | 240051002 |
+| **Kartikey Raghav** | 240021008 |
+| **Tanishq Dhari** | 240001072 |
+
+---
+
 ## Repository Structure
 
 ```
@@ -89,6 +100,24 @@ This section explains:
 * Benefits of SegWit transactions
 
 ---
+
+## Setup Instructions
+
+`Assumption: The bitcoind and bitcoin-cli commands are configured and run in the terminal(or command prompt)`
+
+Run the following commands to give a 50BTC balance to an address in a wallet which we name as **testwallet**.
+* ```bitcoind -regtest -daemon``` - To start the bitcoin core
+* ```bitcoin-cli -regtest createwallet "testwallet"``` - To create a wallet named testwallet and load it
+* ```address=$(bitcoin-cli -regtest getnewaddress)``` - Generate a new address linked to the loaded wallet and store it in the `address` variable
+* ```bitcoin-cli -regtest generatetoaddress 101 "$address"``` - Mine a block to the address generated earlier with 101 confirmations
+
+*Note: Make sure that file `bitcoin.conf` has the configuration as given in the assignment. The rpcusername is **cs_216_assignment2_rpc**
+and the rpcpassword is **cs_216**.*
+
+*We use only the **python-bitcoinrpc** library. The same has been stated in `requirements.txt`*
+
+---
+
 
 ## Setup Outputs
 
