@@ -115,7 +115,7 @@ TXID B->C: b088e29fcc359f92ad0b2b4fa6b77a325d8718ad768cb59ffbb16cc8843d1221
 I tried using btcdeb (bitcoin debugger) to test the script is correct or not but could not find the correct syntax for it. I was running the below command.
 ./btcdeb 304402201f151d22f3b879aa82b6967931b07efb6ccf5b4e3f753e8ac4facddcad7034a6022079a00e977a3e090829687d99d8d4e24a15b219262b110f13b651b28bf667938b01 02e32e37806a0c955681dddae9b242ed13652d3cbecad19be90c0ca2308f2e7fc0 OP_DUP OP_HASH160 3ddd71c62b7cbe8939888deb1624ec9e551a1cd5 OP_EQUALVERIFY OP_CHECKSIG
 but it kept giving the output as invalid script.
-When I ran the same script on an online checker, it gave ouptut as correct. A video of the online checker has been attached to refer.
+When I ran the same script on an online checker, it gave ouptut as correct. A video of the online checker has been attached to refer. The online website used is https://wschae.github.io/build/editor.html.
 
 
 
