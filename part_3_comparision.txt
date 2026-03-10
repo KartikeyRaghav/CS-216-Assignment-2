@@ -1,0 +1,113 @@
+1. Size comparison of P2PKH and P2SH-P2WPKH transactions
+From the decoded transactions:
+
+P2PKH (Legacy) transaction
+Size: 191 bytes
+vsize: 191 vbytes
+Weight: 764
+
+P2SH-P2WPKH (SegWit) transaction
+Size: 215 bytes
+vsize: 134 vbytes
+Weight: 533
+
+At first, the SegWit transaction appears larger in raw bytes (215 vs 191). However, what actually matters in Bitcoin is vsize (virtual size) and weight, because transaction fees are calculated based on these values.
+
+So the effective size comparison is:
+
+Transaction Type	Raw Size	Virtual Size	Weight
+P2PKH	            191 bytes	191 vbytes	     764
+P2SH-P2WPKH     	215 bytes	134 vbytes	     533
+
+Thus, SegWit transactions are effectively smaller and cheaper even though their raw byte size is slightly larger.
+
+
+
+
+2. Script structure comparison
+
+
+P2PKH (Legacy)
+In P2PKH transactions, the unlocking data is placed directly in the input script (scriptSig).
+
+scriptSig (unlocking script):
+<signature> <public key>
+
+scriptPubKey (locking script):
+OP_DUP OP_HASH160 <pubKeyHash> OP_EQUALVERIFY OP_CHECKSIG
+
+Execution stack:
+<signature> <pubkey>
+OP_DUP
+OP_HASH160
+<pubKeyHash>
+OP_EQUALVERIFY
+OP_CHECKSIG
+
+So in legacy transactions:
+Signature and public key are stored inside the transaction input
+Everything counts fully toward the transaction size.
+
+
+P2SH-P2WPKH (SegWit)
+SegWit separates the unlocking data from the transaction.
+
+scriptSig:
+0 <pubKeyHash>
+This is just a small redeem script.
+
+Witness data:
+<signature>
+<public key>
+
+scriptPubKey:
+OP_HASH160 <scriptHash> OP_EQUAL
+
+Validation steps:
+Check that
+HASH160(0 <pubKeyHash>) == scriptHash
+If correct, execute the underlying SegWit script:
+<signature> <pubkey>
+OP_DUP OP_HASH160 <pubKeyHash> OP_EQUALVERIFY OP_CHECKSIG
+
+Thus the actual signature verification is the same as P2PKH, but the signature and public key are stored in the witness section instead of scriptSig.
+
+
+
+
+3. Why SegWit transactions are smaller
+
+SegWit reduces the effective transaction size because of weight calculation.
+Bitcoin uses the following rule:
+Weight = (Base transaction data x 4) + Witness data
+
+Base data --> version, inputs, outputs, scripts
+Witness data --> signatures and public keys
+
+Witness data is counted at 1x weight, while base data counts at 4x weight.
+Since signatures are the largest part of a transaction, moving them to the witness section significantly reduces the effective size (vbytes).
+
+This is why:
+P2PKH vsize  = 191
+SegWit vsize = 134
+
+Even though the raw byte count is slightly larger.
+
+
+
+
+4. Benefits of SegWit transactions
+
+SegWit provides several advantages:
+
+1. Lower transaction fees
+Since the effective size (vbytes) is smaller, users pay lower fees for the same transaction.
+
+2. Increased block capacity
+Because witness data is discounted, more transactions can fit into a block. This increases the effective throughput of the Bitcoin network.
+
+3. Fixes transaction malleability
+Before SegWit, the transaction ID could be modified by changing the signature encoding. SegWit separates signatures from the transaction hash calculation, which prevents transaction malleability attacks.
+
+4. Enables advanced features
+SegWit made it possible to build newer Bitcoin technologies such as Lightning Network, Taproot, more efficient smart contract constructions
